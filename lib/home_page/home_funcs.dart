@@ -1,4 +1,4 @@
-import 'package:codelabs_1/home_page/home_constants.dart';
+import 'package:codelabs/home_page/home_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 

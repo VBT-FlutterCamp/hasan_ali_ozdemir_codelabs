@@ -1,4 +1,4 @@
-import 'package:codelabs_1/home_page/home_page.dart';
+import 'package:codelabs/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
