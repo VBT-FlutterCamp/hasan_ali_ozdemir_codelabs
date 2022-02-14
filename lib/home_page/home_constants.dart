@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 
 class HomeConst {
-  static Color purple400 = Color.fromARGB(255, 194, 24, 250); 
-
-  static double appbarElevation = 5;
   static String appbarTitle = "Startup Name Generator";
   static TextStyle appbarTextStyle = const TextStyle(
-    color: Color.fromARGB(255, 255, 217, 0),
+    color: Colors.white,
     fontSize: 20,
     fontWeight: FontWeight.w600
   );

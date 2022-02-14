@@ -10,8 +10,6 @@ class HomeFuncs {
 
   buildAppBar(context,_pushSaved){
     return AppBar(
-      backgroundColor: HomeConst.purple400,
-      elevation: HomeConst.appbarElevation,
       title: Text(HomeConst.appbarTitle,style: HomeConst.appbarTextStyle),
       actions: [
           IconButton(
