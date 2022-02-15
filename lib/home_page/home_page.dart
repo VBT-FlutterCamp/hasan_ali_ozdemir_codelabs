@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final _suggestions = <WordPair>[];
+  final suggestions = <WordPair>[];
 
   final _saved = <WordPair>{};
 
@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   }
 
     buildBody(){
-    _suggestions.addAll(generateWordPairs().take(10));
+    suggestions.addAll(generateWordPairs().take(10));
     return ListView.builder(
       itemBuilder: (context,i){
 
@@ -35,8 +35,8 @@ class _HomePageState extends State<HomePage> {
 
         final index = i ~/ 2;
 
-        if (index >= _suggestions.length) {
-        _suggestions.addAll(generateWordPairs().take(10));
+        if (index >= suggestions.length) {
+        suggestions.addAll(generateWordPairs().take(10));
       }
 
         return Padding(
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
           child: Container(
             decoration: HomeConst.listTileDecoration,
             padding: const EdgeInsets.all(8),
-            child: _buildListTile(context, _suggestions[index])
+            child: _buildListTile(context, suggestions[index])
           ),
           );
       },
@@ -86,9 +86,22 @@ class _HomePageState extends State<HomePage> {
                   pair.asPascalCase,
                   style: HomeConst.listTileTextStyle,
                 ),
+                trailing: IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: (){
+                    
+                  },
+                ),
               );
             },
           );
+
+          void _deleteSaved(pair){
+            setState(() {
+                      _saved.remove(pair);
+                    });
+          }
+
           final divided = tiles.isNotEmpty
               ? ListTile.divideTiles(
                   context: context,

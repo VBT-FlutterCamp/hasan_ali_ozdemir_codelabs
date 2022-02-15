@@ -1,3 +1,4 @@
+import 'package:codelabs/consts.dart';
 import 'package:codelabs/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Codelabs 1',
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          backgroundColor: Constant.purple400,
+          elevation: Constant.appbarElevation
+        ),
         primarySwatch: Colors.blue,
       ),
       home: HomePage(),
